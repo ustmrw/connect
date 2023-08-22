@@ -1,138 +1,154 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
+import 'package:connect/components/my_button.dart';
+import 'package:connect/components/my_textfield.dart';
+import 'package:connect/components/square_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class LoginPage extends StatelessWidget {
+  LoginPage({super.key});
 
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
 
-class _LoginPageState extends State<LoginPage> {
+  void signUserIn() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[300],
-        body: SafeArea(
+      backgroundColor: Colors.grey[300],
+      body: SingleChildScrollView(
+        child: SafeArea(
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
+                const Icon(
                   Icons.star_outline_rounded,
                   size: 100,
                 ),
-                SizedBox(
-                  height: 75,
+                const SizedBox(
+                  height: 50,
                 ),
                 Text(
-                  'Hello Again!',
+                  'Hello!',
                   style: GoogleFonts.bebasNeue(
                     fontSize: 52,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
-                  'Welcome Back! You\'ve been missed',
+                  'Welcome to US Connect!',
                   style: TextStyle(
-                    fontSize: 20,
+                    color: Colors.grey[700],
+                    fontSize: 16,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
+                  height: 25,
+                ),
+                MyTextField(
+                  controller: usernameController,
+                  hintText: 'Username',
+                  obscureText: false,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                MyTextField(
+                  controller: passwordController,
+                  hintText: 'Password',
+                  obscureText: true,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Forgot Password?',
+                        style: TextStyle(
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                MyButton(
+                  onTap: signUserIn,
+                ),
+                const SizedBox(
                   height: 50,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Email / Username / Phone Number',
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[400],
                         ),
                       ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Password',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Center(
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Text(
-                      'Sign In',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                          'Or continue with',
+                          style: TextStyle(color: Colors.grey[700]),
+                        ),
                       ),
-                    )),
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[400],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
+                  height: 50,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SquareTile(imagePath: 'lib/img/apple.png'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    SquareTile(imagePath: 'lib/img/G.png'),
+                  ],
+                ),
+                const SizedBox(
                   height: 25,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Need to Register?',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+                      'Want to signup by email or phone?',
+                      style: TextStyle(color: Colors.grey[700]),
                     ),
-                    Text(
-                      ' Register Now',
+                    const SizedBox(width: 4),
+                    const Text(
+                      'Register Now',
                       style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                      ),
+                          color: Colors.blue, fontWeight: FontWeight.bold),
                     ),
                   ],
-                ),
+                )
               ],
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

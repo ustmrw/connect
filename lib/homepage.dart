@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ResponsiveLayout(
+      body: const ResponsiveLayout(
         mobileBody: MyMobileBody(),
         desktopBody: MyDesktopBody(),
       ),
@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
             onTabChange: (index) {
               print(index);
             },
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             tabs: const [
               GButton(
                 icon: Icons.search,
