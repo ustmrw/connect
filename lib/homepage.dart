@@ -1,3 +1,6 @@
+import 'package:connect/responsive/desktop_body.dart';
+import 'package:connect/responsive/mobile_body.dart';
+import 'package:connect/responsive/responsive_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -11,13 +14,41 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      bottomNavigationBar: GNav(
-        tabs: [
-          GButton(icon: Icons.search),
-          GButton(icon: Icons.home),
-          GButton(icon: Icons.person),
-        ],
+    return Scaffold(
+      body: ResponsiveLayout(
+        mobileBody: MyMobileBody(),
+        desktopBody: MyDesktopBody(),
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.black,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+          child: GNav(
+            backgroundColor: Colors.black,
+            color: Colors.white,
+            activeColor: Colors.white,
+            tabBackgroundColor: Colors.grey.shade800,
+            gap: 8,
+            onTabChange: (index) {
+              print(index);
+            },
+            padding: EdgeInsets.all(16),
+            tabs: const [
+              GButton(
+                icon: Icons.search,
+                text: 'Search',
+              ),
+              GButton(
+                icon: Icons.home,
+                text: 'Home',
+              ),
+              GButton(
+                icon: Icons.person,
+                text: 'Profile',
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
