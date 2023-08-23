@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:connect/constants.dart';
-import 'package:connect/util/my_box.dart';
-import 'package:connect/util/my_tile.dart';
+import '../util/my_box.dart';
+import '../util/my_tile.dart';
 
-class MobileScaffold extends StatefulWidget {
-  const MobileScaffold({Key? key}) : super(key: key);
+class TabletScaffold extends StatefulWidget {
+  const TabletScaffold({Key? key}) : super(key: key);
 
   @override
-  State<MobileScaffold> createState() => _MobileScaffoldState();
+  State<TabletScaffold> createState() => _TabletScaffoldState();
 }
 
-class _MobileScaffoldState extends State<MobileScaffold> {
+class _TabletScaffoldState extends State<TabletScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,13 +23,13 @@ class _MobileScaffoldState extends State<MobileScaffold> {
           children: [
             // first 4 boxes in grid
             AspectRatio(
-              aspectRatio: 1,
+              aspectRatio: 4,
               child: SizedBox(
                 width: double.infinity,
                 child: GridView.builder(
                   itemCount: 4,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2),
+                      crossAxisCount: 4),
                   itemBuilder: (context, index) {
                     return const MyBox();
                   },
@@ -40,7 +40,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
             // list of previous days
             Expanded(
               child: ListView.builder(
-                itemCount: 4,
+                itemCount: 6,
                 itemBuilder: (context, index) {
                   return const MyTile();
                 },

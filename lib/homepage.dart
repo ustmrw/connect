@@ -1,6 +1,7 @@
 import 'package:connect/responsive/desktop_body.dart';
 import 'package:connect/responsive/mobile_body.dart';
 import 'package:connect/responsive/responsive_layout.dart';
+import 'package:connect/responsive/tablet_body.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -16,8 +17,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: const ResponsiveLayout(
-        mobileBody: MyMobileBody(),
-        desktopBody: MyDesktopBody(),
+        mobileBody: MobileScaffold(),
+        tabletBody: TabletScaffold(),
+        desktopBody: DesktopScaffold(),
       ),
       bottomNavigationBar: Container(
         color: Colors.black,

@@ -1,6 +1,6 @@
-import 'package:connect/components/my_button.dart';
-import 'package:connect/components/my_textfield.dart';
-import 'package:connect/components/square_tile.dart';
+import 'package:connect/util/my_button.dart';
+import 'package:connect/util/my_textfield.dart';
+import 'package:connect/util/square_tile.dart';
 import 'package:connect/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
