@@ -1,6 +1,7 @@
 import 'package:connect/components/my_button.dart';
 import 'package:connect/components/my_textfield.dart';
 import 'package:connect/components/square_tile.dart';
+import 'package:connect/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -10,7 +11,7 @@ class LoginPage extends StatelessWidget {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void signUserIn() {}
+  // void signUserIn() {}
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +25,10 @@ class LoginPage extends StatelessWidget {
               children: [
                 const Icon(
                   Icons.star_outline_rounded,
-                  size: 100,
+                  size: 75,
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 10,
                 ),
                 Text(
                   'Hello!',
@@ -42,7 +43,7 @@ class LoginPage extends StatelessWidget {
                   'Welcome to US Connect!',
                   style: TextStyle(
                     color: Colors.grey[700],
-                    fontSize: 16,
+                    fontSize: 18,
                   ),
                 ),
                 const SizedBox(
@@ -82,10 +83,17 @@ class LoginPage extends StatelessWidget {
                   height: 25,
                 ),
                 MyButton(
-                  onTap: signUserIn,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomePage()),
+                    );
+                  },
                 ),
+                //   onTap: signUserIn,
+                // ),
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -114,7 +122,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -127,7 +135,7 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 25,
+                  height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -143,7 +151,10 @@ class LoginPage extends StatelessWidget {
                           color: Colors.blue, fontWeight: FontWeight.bold),
                     ),
                   ],
-                )
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
               ],
             ),
           ),
