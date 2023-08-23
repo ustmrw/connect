@@ -1,4 +1,4 @@
-import 'package:connect/loginpage.dart';
+import 'package:connect/onboarding.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: LoginPage());
+    return MaterialApp(
+        debugShowCheckedModeBanner: false, home: OnboardingPages());
   }
 }

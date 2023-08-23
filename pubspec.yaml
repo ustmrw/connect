@@ -35,13 +35,14 @@ dependencies:
   google_fonts: ^5.1.0
   google_nav_bar: ^5.0.6
   material: ^1.0.0+2
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   flutter_launcher_icons: ^0.13.1
   flutter_lints: ^2.0.0
   flutter_native_splash: ^2.3.2
+  flutter_test:
+    sdk: flutter
 flutter_native_splash:
   # color: '#0A3161'
   color: '#000'
