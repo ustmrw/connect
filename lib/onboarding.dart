@@ -28,7 +28,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                 onLastPage = (index == 2);
               });
             },
-            children: const [
+            children: [
               IntroPage1(),
               IntroPage2(),
               IntroPage3(),
