@@ -18,7 +18,7 @@ var myDrawer = Drawer(
     children: [
       const DrawerHeader(
         child: Icon(
-          Icons.favorite,
+          Icons.star,
           size: 64,
         ),
       ),

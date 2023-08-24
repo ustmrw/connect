@@ -23,6 +23,9 @@ class LoginPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const SizedBox(
+                  height: 10,
+                ),
                 const Icon(
                   Icons.star_outline_rounded,
                   size: 75,
@@ -31,7 +34,7 @@ class LoginPage extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  'Hello!',
+                  'C O N N E C T',
                   style: GoogleFonts.bebasNeue(
                     fontSize: 52,
                   ),
@@ -40,7 +43,7 @@ class LoginPage extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  'Welcome to US Connect!',
+                  'L O G I N',
                   style: TextStyle(
                     color: Colors.grey[700],
                     fontSize: 18,
@@ -63,7 +66,7 @@ class LoginPage extends StatelessWidget {
                   obscureText: true,
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -80,7 +83,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 25,
+                  height: 20,
                 ),
                 MyButton(
                   onTap: () {
@@ -135,7 +138,7 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -3,7 +3,6 @@ import 'package:connect/responsive/mobile_body.dart';
 import 'package:connect/responsive/responsive_layout.dart';
 import 'package:connect/responsive/tablet_body.dart';
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,44 +12,59 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int currentPageIndex = 1;
+
+  final List<Widget> pages = [
+    Container(
+      color: Colors.grey[200],
+      alignment: Alignment.center,
+      child: const Text('Search'),
+    ),
+    const ResponsiveLayout(
+      mobileBody: MobileScaffold(),
+      tabletBody: TabletScaffold(),
+      desktopBody: DesktopScaffold(),
+    ),
+    Container(
+      color: Colors.grey[200],
+      alignment: Alignment.center,
+      child: const Text('Profile'),
+    ),
+    // Add more pages if needed
+  ];
+
+  NavigationDestinationLabelBehavior labelBehavior =
+      NavigationDestinationLabelBehavior.onlyShowSelected;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const ResponsiveLayout(
-        mobileBody: MobileScaffold(),
-        tabletBody: TabletScaffold(),
-        desktopBody: DesktopScaffold(),
-      ),
-      bottomNavigationBar: Container(
-        color: Colors.black,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-          child: GNav(
-            backgroundColor: Colors.black,
-            color: Colors.white,
-            activeColor: Colors.white,
-            tabBackgroundColor: Colors.grey.shade800,
-            gap: 8,
-            onTabChange: (index) {
-              print(index);
+      body: pages[currentPageIndex],
+      bottomNavigationBar: NavigationBar(
+        labelBehavior: labelBehavior,
+        selectedIndex: currentPageIndex,
+        onDestinationSelected: (int index) {
+          setState(
+            () {
+              currentPageIndex = index;
             },
-            padding: const EdgeInsets.all(16),
-            tabs: const [
-              GButton(
-                icon: Icons.search,
-                text: 'Search',
-              ),
-              GButton(
-                icon: Icons.home,
-                text: 'Home',
-              ),
-              GButton(
-                icon: Icons.person,
-                text: 'Profile',
-              ),
-            ],
+          );
+        },
+        destinations: const <Widget>[
+          NavigationDestination(
+            icon: Icon(Icons.search_outlined),
+            label: 'Search',
           ),
-        ),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.home),
+            icon: Icon(Icons.home_outlined),
+            label: 'Home',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.person),
+            icon: Icon(Icons.person_outlined),
+            label: 'Profile',
+          ),
+        ],
       ),
     );
   }
