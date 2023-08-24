@@ -48,7 +48,15 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                         ));
                       },
                       child: const Text('Demo')),
-                  SmoothPageIndicator(controller: _controller, count: 3),
+                  SmoothPageIndicator(
+                    controller: _controller,
+                    count: 3,
+                    effect: const ScrollingDotsEffect(
+                      dotColor: Colors.grey,
+                      fixedCenter: true,
+                      activeDotColor: Colors.black,
+                    ),
+                  ),
                   onLastPage
                       ? GestureDetector(
                           onTap: () {
