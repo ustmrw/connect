@@ -30,7 +30,6 @@ class _HomePageState extends State<HomePage> {
       alignment: Alignment.center,
       child: const Text('Profile'),
     ),
-    // Add more pages if needed
   ];
 
   NavigationDestinationLabelBehavior labelBehavior =

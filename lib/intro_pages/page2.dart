@@ -11,23 +11,27 @@ class IntroPage2 extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 80,
-              ),
-              Text(
-                'A Better Government for Everyone!',
-                style: GoogleFonts.bebasNeue(
-                  fontSize: 38,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 110,
                 ),
-              ),
-              Lottie.network(
-                'https://lottie.host/db41165e-0dc6-4e26-8f2c-a506a654be39/YM1hMB5Aoa.json',
-                width: 450,
-                fit: BoxFit.fill,
-              ),
-            ],
+                Text(
+                  'Government that works!',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.bebasNeue(
+                    fontSize: 40,
+                  ),
+                ),
+                Lottie.network(
+                  'https://lottie.host/db41165e-0dc6-4e26-8f2c-a506a654be39/YM1hMB5Aoa.json',
+                  width: 450,
+                  fit: BoxFit.fill,
+                ),
+              ],
+            ),
           ),
         ),
       ),
