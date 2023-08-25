@@ -28,7 +28,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                 onLastPage = (index == 2);
               });
             },
-            children: [
+            children: const [
               IntroPage1(),
               IntroPage2(),
               IntroPage3(),
@@ -43,7 +43,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
-                            return const HomePage();
+                            return HomePage();
                           },
                         ));
                       },

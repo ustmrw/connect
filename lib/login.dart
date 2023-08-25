@@ -9,7 +9,7 @@ class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
   final usernameController = TextEditingController();
-  final passwordController = TextEditingController();
+  // final passwordController = TextEditingController();
 
   // void signUserIn() {}
 
@@ -54,34 +54,34 @@ class LoginPage extends StatelessWidget {
                 ),
                 MyTextField(
                   controller: usernameController,
-                  hintText: 'Username',
+                  hintText: 'Username / Email / Phone',
                   obscureText: false,
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                MyTextField(
-                  controller: passwordController,
-                  hintText: 'Password',
-                  obscureText: true,
-                ),
+                // const SizedBox(
+                //   height: 10,
+                // ),
+                // MyTextField(
+                //   controller: passwordController,
+                //   hintText: 'Password',
+                //   obscureText: true,
+                // ),
                 const SizedBox(
                   height: 20,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Forgot Password?',
-                        style: TextStyle(
-                          color: Colors.grey[600],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.end,
+                //     children: [
+                //       Text(
+                //         'Forgot Password?',
+                //         style: TextStyle(
+                //           color: Colors.grey[600],
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -89,7 +89,7 @@ class LoginPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const HomePage()),
+                      MaterialPageRoute(builder: (context) => HomePage()),
                     );
                   },
                 ),
@@ -140,21 +140,21 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Want to signup by email or phone?',
-                      style: TextStyle(color: Colors.grey[700]),
-                    ),
-                    const SizedBox(width: 4),
-                    const Text(
-                      'Register Now',
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     Text(
+                //       'Want to signup by email or phone?',
+                //       style: TextStyle(color: Colors.grey[700]),
+                //     ),
+                //     const SizedBox(width: 4),
+                //     const Text(
+                //       'Register Now',
+                //       style: TextStyle(
+                //           color: Colors.blue, fontWeight: FontWeight.bold),
+                //     ),
+                //   ],
+                // ),
                 const SizedBox(
                   height: 25,
                 ),

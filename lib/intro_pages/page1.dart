@@ -13,11 +13,10 @@ class IntroPage1 extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Stack(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(
-                  height: 120,
-                ),
                 Text(
                   'Welcome to USA Connect!',
                   textAlign: TextAlign.center,

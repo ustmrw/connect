@@ -2,10 +2,14 @@ import 'package:connect/responsive/desktop_body.dart';
 import 'package:connect/responsive/mobile_body.dart';
 import 'package:connect/responsive/responsive_layout.dart';
 import 'package:connect/responsive/tablet_body.dart';
+import 'package:connect/user_profile.dart';
+import 'package:connect/search.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  final searchController = TextEditingController();
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -15,21 +19,17 @@ class _HomePageState extends State<HomePage> {
   int currentPageIndex = 1;
 
   final List<Widget> pages = [
-    Container(
-      color: Colors.grey[200],
-      alignment: Alignment.center,
-      child: const Text('Search'),
+    const Column(
+      children: [
+        MySearchBar(controller: SearchController, hintText: 'Search'),
+      ],
     ),
     const ResponsiveLayout(
       mobileBody: MobileScaffold(),
       tabletBody: TabletScaffold(),
       desktopBody: DesktopScaffold(),
     ),
-    Container(
-      color: Colors.grey[200],
-      alignment: Alignment.center,
-      child: const Text('Profile'),
-    ),
+    const ProfilePage(),
   ];
 
   NavigationDestinationLabelBehavior labelBehavior =
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
           NavigationDestination(
             selectedIcon: Icon(Icons.home),
             icon: Icon(Icons.home_outlined),
-            label: 'Home',
+            label: 'HOME',
           ),
           NavigationDestination(
             selectedIcon: Icon(Icons.person),
