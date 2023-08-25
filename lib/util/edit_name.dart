@@ -42,7 +42,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
               const SizedBox(
                   width: 330,
                   child: Text(
-                    "What's Your Name?",
+                    "Update Legal Name",
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
@@ -105,7 +105,8 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                             if (_formKey.currentState!.validate() &&
                                 isAlpha(firstNameController.text +
                                     secondNameController.text)) {
-                              updateUserValue("${firstNameController.text} ${secondNameController.text}");
+                              updateUserValue(
+                                  "${firstNameController.text} ${secondNameController.text}");
                               Navigator.pop(context);
                             }
                           },

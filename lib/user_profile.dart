@@ -1,13 +1,12 @@
 import 'dart:async';
-
-import 'package:flutter/material.dart';
-import 'package:connect/util/edit_description.dart';
+import 'package:connect/constants.dart';
+import 'package:connect/util/display_image_widget.dart';
 import 'package:connect/util/edit_email.dart';
 import 'package:connect/util/edit_image.dart';
 import 'package:connect/util/edit_name.dart';
 import 'package:connect/util/edit_phone.dart';
+import 'package:flutter/material.dart';
 import 'usr/user.dart';
-import 'package:connect/util/display_image_widget.dart';
 import 'usr/user_data.dart';
 
 // This class handles the Page to dispaly the user's info on the "Edit Profile" Screen
@@ -24,13 +23,9 @@ class _ProfilePageState extends State<ProfilePage> {
     final user = UserData.myUser;
 
     return Scaffold(
-      body: Column(
-        children: [
-          AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            toolbarHeight: 10,
-          ),
+      appBar: myAppBar,
+      body: SingleChildScrollView(
+        child: Column(children: [
           const Center(
               child: Padding(
                   padding: EdgeInsets.only(bottom: 20),
@@ -39,7 +34,6 @@ class _ProfilePageState extends State<ProfilePage> {
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w700,
-                      color: Color.fromRGBO(64, 105, 225, 1),
                     ),
                   ))),
           InkWell(
@@ -53,11 +47,8 @@ class _ProfilePageState extends State<ProfilePage> {
           buildUserInfoDisplay(user.name, 'Name', const EditNameFormPage()),
           buildUserInfoDisplay(user.phone, 'Phone', const EditPhoneFormPage()),
           buildUserInfoDisplay(user.email, 'Email', const EditEmailFormPage()),
-          Expanded(
-            flex: 4,
-            child: buildAbout(user),
-          )
-        ],
+          buildAbout(user),
+        ]),
       ),
     );
   }
@@ -114,14 +105,14 @@ class _ProfilePageState extends State<ProfilePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Tell Us About Yourself',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey,
-            ),
-          ),
+          // const Text(
+          //   'Tell Us About Yourself',
+          //   style: TextStyle(
+          //     fontSize: 15,
+          //     fontWeight: FontWeight.w500,
+          //     color: Colors.grey,
+          //   ),
+          // ),
           const SizedBox(height: 1),
           Container(
               width: 350,
@@ -135,25 +126,10 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Row(children: [
                 Expanded(
                     child: TextButton(
-                        onPressed: () {
-                          navigateSecondPage(const EditDescriptionFormPage());
-                        },
-                        child: Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
-                            child: Align(
-                                alignment: Alignment.topLeft,
-                                child: Text(
-                                  user.aboutMeDescription,
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    height: 1.4,
-                                  ),
-                                ))))),
-                const Icon(
-                  Icons.keyboard_arrow_right,
-                  color: Colors.grey,
-                  size: 40.0,
-                )
+                        onPressed: () {},
+                        child: const Padding(
+                          padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                        ))),
               ]))
         ],
       ));

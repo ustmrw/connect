@@ -47,7 +47,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                           },
                         ));
                       },
-                      child: const Text('Demo')),
+                      child: const Text('Try Demo')),
                   SmoothPageIndicator(
                     controller: _controller,
                     count: 3,
@@ -66,11 +66,11 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                               },
                             ));
                           },
-                          child: const Text('Done'))
+                          child: const Text('Get Started'))
                       : GestureDetector(
                           onTap: () {
                             _controller.nextPage(
-                              duration: const Duration(milliseconds: 500),
+                              duration: const Duration(milliseconds: 250),
                               curve: Curves.easeIn,
                             );
                           },

@@ -41,7 +41,7 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
                 const SizedBox(
                     width: 320,
                     child: Text(
-                      "What's your email?",
+                      "Update your email",
                       style:
                           TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                       textAlign: TextAlign.left,

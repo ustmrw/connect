@@ -19,11 +19,7 @@ class _HomePageState extends State<HomePage> {
   int currentPageIndex = 1;
 
   final List<Widget> pages = [
-    const Column(
-      children: [
-        MySearchBar(controller: SearchController, hintText: 'Search'),
-      ],
-    ),
+    const MySearchBar(controller: SearchController, hintText: 'Search'),
     const ResponsiveLayout(
       mobileBody: MobileScaffold(),
       tabletBody: TabletScaffold(),
