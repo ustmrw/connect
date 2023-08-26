@@ -23,6 +23,7 @@ class IntroPage2 extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.bebasNeue(
                     fontSize: 40,
+                    color: Colors.black,
                   ),
                 ),
                 Lottie.network(

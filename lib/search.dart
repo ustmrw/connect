@@ -75,8 +75,8 @@ class _PinnedSearchBarAppState extends State<PinnedSearchBarApp> {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Container(
-                      height: 1000,
-                      color: Colors.deepPurple.withOpacity(0.5),
+                      height: 500,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ),

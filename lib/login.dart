@@ -29,6 +29,7 @@ class LoginPage extends StatelessWidget {
                 const Icon(
                   Icons.star_outline_rounded,
                   size: 75,
+                  color: Colors.black,
                 ),
                 const SizedBox(
                   height: 10,
@@ -37,6 +38,7 @@ class LoginPage extends StatelessWidget {
                   'C O N N E C T',
                   style: GoogleFonts.bebasNeue(
                     fontSize: 52,
+                    color: Colors.black,
                   ),
                 ),
                 const SizedBox(

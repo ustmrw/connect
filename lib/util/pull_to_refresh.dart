@@ -34,32 +34,30 @@ class _HomePageState extends State<HomePage> {
     refreshList();
   }
 
-  Future<Null> refreshList() async {
+  Future<void> refreshList() async {
     refreshKey.currentState?.show(atTop: false);
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
 
     setState(() {
       list = List.generate(random.nextInt(10), (i) => "Item $i");
     });
-
-    return null;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pull to refresh"),
+        title: const Text("Pull to refresh"),
       ),
       body: RefreshIndicator(
         key: refreshKey,
+        onRefresh: refreshList,
         child: ListView.builder(
           itemCount: list?.length,
           itemBuilder: (context, i) => ListTile(
             title: Text(list[i]),
           ),
         ),
-        onRefresh: refreshList,
       ),
     );
   }

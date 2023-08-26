@@ -5,9 +5,11 @@ import 'package:connect/responsive/tablet_body.dart';
 import 'package:connect/user_profile.dart';
 import 'package:connect/search.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:connect/util/model_theme.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  HomePage({Key? key}) : super(key: key);
 
   final searchController = TextEditingController();
 
@@ -17,7 +19,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentPageIndex = 1;
-
   final List<Widget> pages = [
     const PinnedSearchBarApp(),
     const ResponsiveLayout(
@@ -32,35 +33,39 @@ class _HomePageState extends State<HomePage> {
       NavigationDestinationLabelBehavior.onlyShowSelected;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: pages[currentPageIndex],
-      bottomNavigationBar: NavigationBar(
-        labelBehavior: labelBehavior,
-        selectedIndex: currentPageIndex,
-        onDestinationSelected: (int index) {
-          setState(
-            () {
-              currentPageIndex = index;
+    return Consumer<ModelTheme>(
+      builder: (context, ModelTheme themeNotifier, child) {
+        return Scaffold(
+          body: pages[currentPageIndex],
+          bottomNavigationBar: NavigationBar(
+            labelBehavior: labelBehavior,
+            selectedIndex: currentPageIndex,
+            onDestinationSelected: (int index) {
+              setState(
+                () {
+                  currentPageIndex = index;
+                },
+              );
             },
-          );
-        },
-        destinations: const <Widget>[
-          NavigationDestination(
-            icon: Icon(Icons.search_outlined),
-            label: 'Search',
+            destinations: const <Widget>[
+              NavigationDestination(
+                icon: Icon(Icons.search_outlined),
+                label: 'Search',
+              ),
+              NavigationDestination(
+                selectedIcon: Icon(Icons.home),
+                icon: Icon(Icons.home_outlined),
+                label: 'HOME',
+              ),
+              NavigationDestination(
+                selectedIcon: Icon(Icons.person),
+                icon: Icon(Icons.person_outlined),
+                label: 'Profile',
+              ),
+            ],
           ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.home),
-            icon: Icon(Icons.home_outlined),
-            label: 'HOME',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.person),
-            icon: Icon(Icons.person_outlined),
-            label: 'Profile',
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
