@@ -14,7 +14,7 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: defaultBackgroundColor,
+      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
       appBar: myAppBar,
       body: Padding(
         padding: const EdgeInsets.all(8.0),

@@ -114,23 +114,14 @@ class _ProfilePageState extends State<ProfilePage> {
           //   ),
           // ),
           const SizedBox(height: 1),
-          Container(
-              width: 350,
-              height: 200,
-              decoration: const BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                color: Colors.grey,
-                width: 1,
-              ))),
-              child: Row(children: [
-                Expanded(
-                    child: TextButton(
-                        onPressed: () {},
-                        child: const Padding(
-                          padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
-                        ))),
-              ]))
+          Row(children: [
+            Expanded(
+                child: TextButton(
+                    onPressed: () {},
+                    child: const Padding(
+                      padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                    ))),
+          ])
         ],
       ));
 
