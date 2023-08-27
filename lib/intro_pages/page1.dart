@@ -25,9 +25,9 @@ class IntroPage1 extends StatelessWidget {
                   ),
                 ),
                 Lottie.network(
-                  'https://lottie.host/607a4271-07bd-423c-adab-a3e6d822a2f3/4IExiKcpyJ.json',
-                  height: 500,
-                  fit: BoxFit.fill,
+                  'https://lottie.host/30b6aece-1f73-44da-af2a-56250c7d3e28/se5ziN49Lg.json',
+                  height: 300,
+                  fit: BoxFit.contain,
                 ),
               ],
             ),

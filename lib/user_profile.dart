@@ -22,7 +22,6 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    bool isDark = false;
     final user = UserData.myUser;
     return Consumer<ModelTheme>(
         builder: (context, ModelTheme themeNotifier, child) {
@@ -53,7 +52,10 @@ class _ProfilePageState extends State<ProfilePage> {
                 user.phone, 'Phone', const EditPhoneFormPage()),
             buildUserInfoDisplay(
                 user.email, 'Email', const EditEmailFormPage()),
-            buildAbout(user),
+            // buildAbout(user),
+            const SizedBox(
+              height: 20,
+            ),
             IconButton(
                 icon: Icon(themeNotifier.isDark
                     ? Icons.nightlight_round

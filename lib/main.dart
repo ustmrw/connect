@@ -21,10 +21,11 @@ class MyApp extends StatelessWidget {
               theme: themeNotifier.isDark
                   ? ThemeData(
                       brightness: Brightness.dark,
-                    )
+                      primaryColor: Colors.teal,
+                      primarySwatch: Colors.teal)
                   : ThemeData(
                       brightness: Brightness.light,
-                      primaryColor: Colors.black,
+                      primaryColor: Colors.blue,
                       primarySwatch: Colors.blue),
               home: const OnboardingPages());
         },
@@ -45,6 +46,6 @@ class ThemeClass {
       scaffoldBackgroundColor: Colors.black,
       colorScheme: const ColorScheme.dark(),
       appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blue,
       ));
 }

@@ -1,89 +1,53 @@
+import 'package:connect/constants.dart';
 import 'package:flutter/material.dart';
-
-/// Flutter code sample for pinned [SearchAnchor] while scrolling.
+import 'package:connect/util/model_theme.dart';
 
 void main() {
-  runApp(const PinnedSearchBarApp());
+  runApp(const SearchBarApp());
 }
 
-class PinnedSearchBarApp extends StatefulWidget {
-  const PinnedSearchBarApp({super.key});
+class SearchBarApp extends StatefulWidget {
+  const SearchBarApp({super.key});
 
   @override
-  State<PinnedSearchBarApp> createState() => _PinnedSearchBarAppState();
+  State<SearchBarApp> createState() => _SearchBarAppState();
 }
 
-class _PinnedSearchBarAppState extends State<PinnedSearchBarApp> {
+class _SearchBarAppState extends State<SearchBarApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          useMaterial3: true, colorSchemeSeed: const Color(0xff6750a4)),
-      home: Padding(
+    return Scaffold(
+      appBar: myAppBar,
+      body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Scaffold(
-          body: SafeArea(
-            child: CustomScrollView(
-              slivers: <Widget>[
-                SliverAppBar(
-                  clipBehavior: Clip.none,
-                  shape: const StadiumBorder(),
-                  scrolledUnderElevation: 0.0,
-                  titleSpacing: 0.0,
-                  backgroundColor: Colors.transparent,
-                  floating:
-                      true, // We can also uncomment this line and set `pinned` to true to see a pinned search bar.
-                  title: SearchAnchor.bar(
-                    suggestionsBuilder:
-                        (BuildContext context, SearchController controller) {
-                      return List<Widget>.generate(
-                        5,
-                        (int index) {
-                          return ListTile(
-                            titleAlignment: ListTileTitleAlignment.center,
-                            title: Text('Initial list item $index'),
-                          );
-                        },
-                      );
-                    },
-                  ),
-                ),
-                // The listed items below are just for filling the screen
-                // so we can see the scrolling effect.
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: SizedBox(
-                      height: 100.0,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 10,
-                        itemBuilder: (BuildContext context, int index) {
-                          return SizedBox(
-                            width: 100.0,
-                            child: Card(
-                              child: Center(child: Text('Card $index')),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                ),
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Container(
-                      height: 500,
-                      color: Colors.grey[300],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+        child: SearchAnchor(
+            builder: (BuildContext context, SearchController controller) {
+          return SearchBar(
+            controller: controller,
+            padding: const MaterialStatePropertyAll<EdgeInsets>(
+                EdgeInsets.symmetric(horizontal: 16.0)),
+            onTap: () {
+              controller.openView();
+            },
+            onChanged: (_) {
+              controller.openView();
+            },
+            leading: const Icon(Icons.search),
+          );
+        }, suggestionsBuilder:
+                (BuildContext context, SearchController controller) {
+          return List<ListTile>.generate(5, (int index) {
+            final String item = 'item $index';
+            return ListTile(
+              title: Text(item),
+              onTap: () {
+                setState(() {
+                  controller.closeView(item);
+                });
+              },
+            );
+          });
+        }),
       ),
     );
   }

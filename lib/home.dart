@@ -20,7 +20,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentPageIndex = 1;
   final List<Widget> pages = [
-    const PinnedSearchBarApp(),
+    const SearchBarApp(),
     const ResponsiveLayout(
       mobileBody: MobileScaffold(),
       tabletBody: TabletScaffold(),

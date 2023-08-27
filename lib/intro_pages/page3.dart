@@ -28,7 +28,7 @@ class IntroPage3 extends StatelessWidget {
                 Lottie.network(
                   'https://lottie.host/cbf81d3b-d023-4e53-8a1b-da81667676ff/ZHgRhTQF0F.json',
                   height: 350,
-                  fit: BoxFit.fill,
+                  fit: BoxFit.contain,
                 ),
               ],
             ),

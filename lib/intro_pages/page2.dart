@@ -16,7 +16,7 @@ class IntroPage2 extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 110,
+                  height: 150,
                 ),
                 Text(
                   'Government that works!',
@@ -27,9 +27,9 @@ class IntroPage2 extends StatelessWidget {
                   ),
                 ),
                 Lottie.network(
-                  'https://lottie.host/db41165e-0dc6-4e26-8f2c-a506a654be39/YM1hMB5Aoa.json',
+                  'https://lottie.host/3154add9-192a-4210-9471-7921c86e2c0a/9ONO2Ive3S.json',
                   width: 450,
-                  fit: BoxFit.fill,
+                  fit: BoxFit.contain,
                 ),
               ],
             ),
