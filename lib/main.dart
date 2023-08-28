@@ -46,6 +46,6 @@ class ThemeClass {
       scaffoldBackgroundColor: Colors.black,
       colorScheme: const ColorScheme.dark(),
       appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.teal,
       ));
 }

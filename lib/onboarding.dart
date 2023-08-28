@@ -34,7 +34,8 @@ class _OnboardingPagesState extends State<OnboardingPages> {
               IntroPage3(),
             ],
           ),
-          Container(
+          AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
               alignment: const Alignment(0, 0.75),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
