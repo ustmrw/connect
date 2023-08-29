@@ -35,13 +35,17 @@ class _OnboardingPagesState extends State<OnboardingPages> {
             ],
           ),
           AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
+              duration: const Duration(milliseconds: 150),
               alignment: const Alignment(0, 0.75),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  GestureDetector(
-                      onTap: () {
+                  TextButton(
+                      style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(Colors.black),
+                      ),
+                      onPressed: () {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
                             return HomePage();
@@ -59,8 +63,12 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                     ),
                   ),
                   onLastPage
-                      ? GestureDetector(
-                          onTap: () {
+                      ? TextButton(
+                          style: ButtonStyle(
+                            foregroundColor:
+                                MaterialStateProperty.all<Color>(Colors.black),
+                          ),
+                          onPressed: () {
                             Navigator.push(context, MaterialPageRoute(
                               builder: (context) {
                                 return LoginPage();
@@ -68,10 +76,14 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                             ));
                           },
                           child: const Text('Get Started'))
-                      : GestureDetector(
-                          onTap: () {
+                      : TextButton(
+                          style: ButtonStyle(
+                            foregroundColor:
+                                MaterialStateProperty.all<Color>(Colors.black),
+                          ),
+                          onPressed: () {
                             _controller.nextPage(
-                              duration: const Duration(milliseconds: 250),
+                              duration: const Duration(milliseconds: 150),
                               curve: Curves.easeIn,
                             );
                           },
