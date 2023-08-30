@@ -36,7 +36,7 @@ class DisplayImage extends StatelessWidget {
 
     return CircleAvatar(
       radius: 75,
-      backgroundColor: color,
+      backgroundColor: Colors.transparent,
       child: CircleAvatar(
         backgroundImage: image as ImageProvider,
         radius: 70,

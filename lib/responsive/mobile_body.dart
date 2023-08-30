@@ -30,23 +30,66 @@ class _MobileScaffoldState extends State<MobileScaffold> {
             return Future<void>.delayed(const Duration(seconds: 2));
           },
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Column(
               children: [
                 // first 4 boxes in grid
-                AspectRatio(
-                  aspectRatio: 1,
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: GridView.builder(
-                      itemCount: 4,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2),
-                      itemBuilder: (context, index) {
-                        return const MyBox();
-                      },
-                    ),
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 20),
+                  height: 150,
+                  child: ListView(
+                    padding: EdgeInsets.all(8),
+                    // This next line does the trick.
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      Container(
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.red,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Container(
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.blue,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Container(
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.green,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Container(
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.yellow,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Container(
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.orange,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
 
