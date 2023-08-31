@@ -40,7 +40,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  TextButton(
+                  OutlinedButton(
                       style: ButtonStyle(
                         foregroundColor:
                             MaterialStateProperty.all<Color>(Colors.black),
@@ -63,7 +63,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                     ),
                   ),
                   onLastPage
-                      ? TextButton(
+                      ? OutlinedButton(
                           style: ButtonStyle(
                             foregroundColor:
                                 MaterialStateProperty.all<Color>(Colors.black),
@@ -76,7 +76,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                             ));
                           },
                           child: const Text('Get Started'))
-                      : TextButton(
+                      : OutlinedButton(
                           style: ButtonStyle(
                             foregroundColor:
                                 MaterialStateProperty.all<Color>(Colors.black),

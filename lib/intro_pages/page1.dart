@@ -10,26 +10,32 @@ class IntroPage1 extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.red,
       body: SafeArea(
-        child: Center(
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Welcome to USA Connect!',
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.bebasNeue(
-                    fontSize: 42,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    '''
+            Welcome
+            to
+            USA
+            Connect!''',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.bebasNeue(
+                      fontSize: 42,
+                    ),
                   ),
-                ),
-                Lottie.network(
-                  'https://lottie.host/30b6aece-1f73-44da-af2a-56250c7d3e28/se5ziN49Lg.json',
-                  height: 300,
-                  fit: BoxFit.contain,
-                ),
-              ],
+                  Lottie.network(
+                    'https://lottie.host/30b6aece-1f73-44da-af2a-56250c7d3e28/se5ziN49Lg.json',
+                    height: 300,
+                    fit: BoxFit.contain,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

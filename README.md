@@ -6,6 +6,8 @@
  2. Voting
  3. ID
  4. Policing
- 5. Money management 
+ 5. Escaping poverty
+ 5a. Getting free healthcare
+ 5b. Affordable housing
 
 Please star and help us make history!

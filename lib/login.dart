@@ -27,7 +27,7 @@ class LoginPage extends StatelessWidget {
                   height: 10,
                 ),
                 const Icon(
-                  Icons.star_outline_rounded,
+                  Icons.star,
                   size: 75,
                   color: Colors.black,
                 ),

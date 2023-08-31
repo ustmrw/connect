@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:connect/constants.dart';
-import 'package:connect/util/my_box.dart';
 import 'package:connect/util/my_tile.dart';
 
 class MobileScaffold extends StatefulWidget {
@@ -33,9 +32,20 @@ class _MobileScaffoldState extends State<MobileScaffold> {
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Column(
               children: [
-                // first 4 boxes in grid
+                Text(
+                  'Notifications',
+                  style: TextStyle(fontSize: 20),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                      return const MyTile();
+                    },
+                  ),
+                ),
                 Container(
-                  margin: const EdgeInsets.symmetric(vertical: 20),
+                  margin: const EdgeInsets.all(10),
                   height: 150,
                   child: ListView(
                     padding: EdgeInsets.all(8),
@@ -43,6 +53,11 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
                       Container(
+                        child: Text(
+                          'ID',
+                          style: TextStyle(fontSize: 30),
+                        ),
+                        alignment: Alignment.center,
                         width: 150,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
@@ -53,6 +68,11 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                         width: 8,
                       ),
                       Container(
+                        child: Text(
+                          'Health',
+                          style: TextStyle(fontSize: 30),
+                        ),
+                        alignment: Alignment.center,
                         width: 150,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
@@ -63,6 +83,11 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                         width: 8,
                       ),
                       Container(
+                        child: Text(
+                          'Money',
+                          style: TextStyle(fontSize: 30),
+                        ),
+                        alignment: Alignment.center,
                         width: 150,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
@@ -73,6 +98,11 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                         width: 8,
                       ),
                       Container(
+                        child: Text(
+                          'Vote',
+                          style: TextStyle(fontSize: 30),
+                        ),
+                        alignment: Alignment.center,
                         width: 150,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
@@ -83,6 +113,11 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                         width: 8,
                       ),
                       Container(
+                        child: Text(
+                          'Police',
+                          style: TextStyle(fontSize: 30),
+                        ),
+                        alignment: Alignment.center,
                         width: 150,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
@@ -90,16 +125,6 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                         ),
                       ),
                     ],
-                  ),
-                ),
-
-                // list of previous days
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: 4,
-                    itemBuilder: (context, index) {
-                      return const MyTile();
-                    },
                   ),
                 ),
               ],

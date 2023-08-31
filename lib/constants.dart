@@ -13,11 +13,11 @@ var drawerTextColor = TextStyle(
 
 var tilePadding = const EdgeInsets.all(8);
 var myDrawer = Drawer(
-  backgroundColor: Colors.grey[300],
+  width: 250,
+  backgroundColor: Colors.transparent,
   elevation: 0,
   child: Container(
-    decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8), color: Colors.grey[200]),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
     child: SingleChildScrollView(
       child: Column(
         children: [
@@ -30,7 +30,7 @@ var myDrawer = Drawer(
           Padding(
             padding: tilePadding,
             child: TextButton(
-              onPressed: null,
+              onPressed: () {},
               child: ListTile(
                 leading: const Icon(Icons.home),
                 title: Text(
@@ -43,7 +43,7 @@ var myDrawer = Drawer(
           Padding(
             padding: tilePadding,
             child: TextButton(
-              onPressed: null,
+              onPressed: () {},
               child: ListTile(
                 leading: const Icon(Icons.settings),
                 title: Text(
@@ -56,7 +56,7 @@ var myDrawer = Drawer(
           Padding(
             padding: tilePadding,
             child: TextButton(
-              onPressed: null,
+              onPressed: () {},
               child: ListTile(
                 leading: const Icon(Icons.info),
                 title: Text(
@@ -69,7 +69,7 @@ var myDrawer = Drawer(
           Padding(
             padding: tilePadding,
             child: TextButton(
-              onPressed: null,
+              onPressed: () {},
               child: ListTile(
                 leading: const Icon(Icons.logout),
                 title: Text(
