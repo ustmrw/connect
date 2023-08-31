@@ -19,10 +19,7 @@ class IntroPage2 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    '''
-            Government
-            that
-            works!''',
+                    '\n\n\nGovernment services on your device!\n',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.bebasNeue(
                       fontSize: 42,

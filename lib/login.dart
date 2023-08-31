@@ -24,7 +24,7 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 10,
+                  height: 75,
                 ),
                 const Icon(
                   Icons.star,
@@ -140,7 +140,7 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 75,
                 ),
                 // Row(
                 //   mainAxisAlignment: MainAxisAlignment.center,
@@ -157,9 +157,9 @@ class LoginPage extends StatelessWidget {
                 //     ),
                 //   ],
                 // ),
-                const SizedBox(
-                  height: 25,
-                ),
+                // const SizedBox(
+                //   height: 25,
+                // ),
               ],
             ),
           ),

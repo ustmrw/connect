@@ -19,11 +19,7 @@ class IntroPage1 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    '''
-            Welcome
-            to
-            USA
-            Connect!''',
+                    '\nWelcome\nto\nUSA\nConnect!',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.bebasNeue(
                       fontSize: 42,

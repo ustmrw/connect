@@ -7,14 +7,10 @@ var myAppBar = AppBar(
   title: const Text('C O N N E C T'),
   centerTitle: true,
 );
-var drawerTextColor = TextStyle(
-  color: Colors.grey[600],
-);
 
 var tilePadding = const EdgeInsets.all(8);
 var myDrawer = Drawer(
   width: 250,
-  backgroundColor: Colors.transparent,
   elevation: 0,
   child: Container(
     decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
@@ -35,7 +31,6 @@ var myDrawer = Drawer(
                 leading: const Icon(Icons.home),
                 title: Text(
                   'D A S H B O A R D',
-                  style: drawerTextColor,
                 ),
               ),
             ),
@@ -48,7 +43,6 @@ var myDrawer = Drawer(
                 leading: const Icon(Icons.settings),
                 title: Text(
                   'S E T T I N G S',
-                  style: drawerTextColor,
                 ),
               ),
             ),
@@ -61,7 +55,6 @@ var myDrawer = Drawer(
                 leading: const Icon(Icons.info),
                 title: Text(
                   'A B O U T',
-                  style: drawerTextColor,
                 ),
               ),
             ),
@@ -74,7 +67,6 @@ var myDrawer = Drawer(
                 leading: const Icon(Icons.logout),
                 title: Text(
                   'L O G O U T',
-                  style: drawerTextColor,
                 ),
               ),
             ),

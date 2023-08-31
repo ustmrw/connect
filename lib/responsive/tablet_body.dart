@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:connect/constants.dart';
-import '../util/my_box.dart';
 import '../util/my_tile.dart';
 
 class TabletScaffold extends StatefulWidget {
@@ -24,52 +23,121 @@ class _TabletScaffoldState extends State<TabletScaffold> {
             backgroundColor: Colors.black,
             strokeWidth: 2.0,
             onRefresh: () async {
-              // Replace this delay with the code to be executed during refresh
-              // and return a Future when code finishes execution.
+              // Replace delay with Future
               return Future<void>.delayed(const Duration(seconds: 2));
             },
-            child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // open drawer
-                      myDrawer,
+            child: SafeArea(
+              child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // open drawer
+                        myDrawer,
 
-                      // first half of page
-                      Expanded(
-                        flex: 2,
-                        child: Column(
-                          children: [
-                            // first 4 boxes in grid
-                            AspectRatio(
-                              aspectRatio: 4,
-                              child: SizedBox(
-                                width: double.infinity,
-                                child: GridView.builder(
-                                  itemCount: 4,
-                                  gridDelegate:
-                                      const SliverGridDelegateWithFixedCrossAxisCount(
-                                          crossAxisCount: 4),
+                        // first half of page
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            children: [
+                              // first 4 boxes in grid
+                              Container(
+                                margin: const EdgeInsets.all(10),
+                                height: 150,
+                                child: ListView(
+                                  padding: EdgeInsets.all(8),
+                                  // This next line does the trick.
+                                  scrollDirection: Axis.horizontal,
+                                  children: <Widget>[
+                                    Container(
+                                      child: Text(
+                                        'ID',
+                                        style: TextStyle(fontSize: 30),
+                                      ),
+                                      alignment: Alignment.center,
+                                      width: 150,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 8,
+                                    ),
+                                    Container(
+                                      child: Text(
+                                        'Health',
+                                        style: TextStyle(fontSize: 30),
+                                      ),
+                                      alignment: Alignment.center,
+                                      width: 150,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        color: Colors.blue,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 8,
+                                    ),
+                                    Container(
+                                      child: Text(
+                                        'Money',
+                                        style: TextStyle(fontSize: 30),
+                                      ),
+                                      alignment: Alignment.center,
+                                      width: 150,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        color: Colors.green,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 8,
+                                    ),
+                                    Container(
+                                      child: Text(
+                                        'Vote',
+                                        style: TextStyle(fontSize: 30),
+                                      ),
+                                      alignment: Alignment.center,
+                                      width: 150,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        color: Colors.yellow,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 8,
+                                    ),
+                                    Container(
+                                      child: Text(
+                                        'Police',
+                                        style: TextStyle(fontSize: 30),
+                                      ),
+                                      alignment: Alignment.center,
+                                      width: 150,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        color: Colors.orange,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+
+                              Text('Notifications'),
+                              Expanded(
+                                child: ListView.builder(
+                                  itemCount: 6,
                                   itemBuilder: (context, index) {
-                                    return const MyBox();
+                                    return const MyTile();
                                   },
                                 ),
                               ),
-                            ),
-
-                            // list of previous days
-                            Expanded(
-                              child: ListView.builder(
-                                itemCount: 6,
-                                itemBuilder: (context, index) {
-                                  return const MyTile();
-                                },
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ]))));
+                      ])),
+            )));
   }
 }

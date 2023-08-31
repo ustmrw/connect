@@ -19,7 +19,7 @@ class IntroPage3 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Create an account to get started!',
+                    '\n\n\nCreate an account to get started!',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.bebasNeue(
                       fontSize: 42,
