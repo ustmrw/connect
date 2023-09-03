@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:connect/constants.dart';
+import 'package:connect/responsive/tool_pages/id_page.dart';
 import 'package:connect/util/my_tile.dart';
 
 class MobileScaffold extends StatefulWidget {
@@ -32,17 +33,9 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Column(
                 children: [
-                  const SizedBox(height: 20.0),
-                  ListTile(
-                    leading: const Hero(
-                      tag: 'hero-rectangle',
-                      child: BoxWidget(size: Size(50.0, 50.0)),
-                    ),
-                    onTap: () => _gotoDetailsPage(context),
-                  ),
                   Text(
-                    'Notifications',
-                    style: TextStyle(fontSize: 20),
+                    '\nNotifications\n',
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                   ),
                   Expanded(
                     child: ListView.builder(
@@ -60,76 +53,156 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                       // This next line does the trick.
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
-                        Container(
-                          child: Text(
-                            'ID',
-                            style: TextStyle(fontSize: 30),
-                          ),
-                          alignment: Alignment.center,
-                          width: 150,
-                          decoration: BoxDecoration(
+                        Card(
+                          color: Colors.transparent,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
-                            color: Colors.red,
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => IDPage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                color: Colors.red,
+                              ),
+                              child: Hero(
+                                tag: 'uniqueHeroTag',
+                                child: Center(
+                                  child: Text(
+                                    'ID',
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                         SizedBox(
                           width: 8,
                         ),
-                        Container(
-                          child: Text(
-                            'Health',
-                            style: TextStyle(fontSize: 30),
-                          ),
-                          alignment: Alignment.center,
-                          width: 150,
-                          decoration: BoxDecoration(
+                        Card(
+                          color: Colors.transparent,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
-                            color: Colors.blue,
+                          ),
+                          child: Container(
+                            width: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Colors.blue,
+                            ),
+                            child: TextButton(
+                              onPressed: () {},
+                              style: TextButton.styleFrom(
+                                padding:
+                                    EdgeInsets.zero, // Remove default padding
+                              ),
+                              child: Text(
+                                'Health',
+                                style: TextStyle(
+                                    fontSize: 30, color: Colors.white),
+                              ),
+                            ),
                           ),
                         ),
                         SizedBox(
                           width: 8,
                         ),
-                        Container(
-                          child: Text(
-                            'Money',
-                            style: TextStyle(fontSize: 30),
-                          ),
-                          alignment: Alignment.center,
-                          width: 150,
-                          decoration: BoxDecoration(
+                        Card(
+                          color: Colors.transparent,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
-                            color: Colors.green,
+                          ),
+                          child: Container(
+                            width: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Colors.green,
+                            ),
+                            child: TextButton(
+                              onPressed: () {},
+                              style: TextButton.styleFrom(
+                                padding:
+                                    EdgeInsets.zero, // Remove default padding
+                              ),
+                              child: Text(
+                                'Money',
+                                style: TextStyle(
+                                    fontSize: 30, color: Colors.white),
+                              ),
+                            ),
                           ),
                         ),
                         SizedBox(
                           width: 8,
                         ),
-                        Container(
-                          child: Text(
-                            'Vote',
-                            style: TextStyle(fontSize: 30),
-                          ),
-                          alignment: Alignment.center,
-                          width: 150,
-                          decoration: BoxDecoration(
+                        Card(
+                          color: Colors.transparent,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
-                            color: Colors.yellow,
+                          ),
+                          child: Container(
+                            width: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Colors.yellow,
+                            ),
+                            child: TextButton(
+                              onPressed: () {},
+                              style: TextButton.styleFrom(
+                                padding:
+                                    EdgeInsets.zero, // Remove default padding
+                              ),
+                              child: Text(
+                                'Vote',
+                                style: TextStyle(
+                                    fontSize: 30, color: Colors.black),
+                              ),
+                            ),
                           ),
                         ),
                         SizedBox(
                           width: 8,
                         ),
-                        Container(
-                          child: Text(
-                            'Police',
-                            style: TextStyle(fontSize: 30),
-                          ),
-                          alignment: Alignment.center,
-                          width: 150,
-                          decoration: BoxDecoration(
+                        Card(
+                          color: Colors.transparent,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
-                            color: Colors.orange,
+                          ),
+                          child: Container(
+                            width: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Colors.orange,
+                            ),
+                            child: TextButton(
+                              onPressed: () {},
+                              style: TextButton.styleFrom(
+                                padding:
+                                    EdgeInsets.zero, // Remove default padding
+                              ),
+                              child: Text(
+                                'Police',
+                                style: TextStyle(
+                                    fontSize: 30, color: Colors.white),
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -140,35 +213,5 @@ class _MobileScaffoldState extends State<MobileScaffold> {
             ),
           ),
         ));
-  }
-}
-
-void _gotoDetailsPage(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute<void>(
-    builder: (BuildContext context) => Scaffold(
-      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-      appBar: myAppBar,
-      body: const Center(
-        child: Hero(
-          tag: 'hero-rectangle',
-          child: BoxWidget(size: Size(200.0, 200.0)),
-        ),
-      ),
-    ),
-  ));
-}
-
-class BoxWidget extends StatelessWidget {
-  const BoxWidget({super.key, required this.size});
-
-  final Size size;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: size.width,
-      height: size.height,
-      color: Colors.blue,
-    );
   }
 }

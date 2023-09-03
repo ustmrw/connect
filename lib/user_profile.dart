@@ -5,6 +5,7 @@ import 'package:connect/util/edit_email.dart';
 import 'package:connect/util/edit_image.dart';
 import 'package:connect/util/edit_name.dart';
 import 'package:connect/util/edit_phone.dart';
+import 'package:connect/util/edit_id.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:connect/util/model_theme.dart';
@@ -42,7 +43,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ))),
             InkWell(
                 onTap: () {
-                  navigateSecondPage(const EditImagePage());
+                  navigateIDPage(const EditImagePage());
                 },
                 child: DisplayImage(
                   imagePath: user.image,
@@ -53,6 +54,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 user.phone, 'Phone', const EditPhoneFormPage()),
             buildUserInfoDisplay(
                 user.email, 'Email', const EditEmailFormPage()),
+            buildUserInfoDisplay(user.id, 'ID', const EditIDFormPage()),
             // buildAbout(user),
             const SizedBox(
               height: 20,
@@ -103,7 +105,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Expanded(
                         child: TextButton(
                             onPressed: () {
-                              navigateSecondPage(editPage);
+                              navigateIDPage(editPage);
                             },
                             child: Text(
                               getValue,
@@ -150,7 +152,7 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   // Handles navigation and prompts refresh.
-  void navigateSecondPage(Widget editForm) {
+  void navigateIDPage(Widget editForm) {
     Route route = MaterialPageRoute(builder: (context) => editForm);
     Navigator.push(context, route).then(onGoBack);
   }

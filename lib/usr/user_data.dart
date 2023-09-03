@@ -12,7 +12,8 @@ class UserData {
         "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/800px-Flag_of_the_United_States.svg.png",
     name: '[fName] [lName]',
     email: '[email]',
-    phone: '(555) 555-5555',
+    phone: '[phone]',
+    id: '[id]',
   );
 
   static Future init() async =>
