@@ -1,6 +1,10 @@
+import 'package:connect/responsive/tool_pages/health_page.dart';
+import 'package:connect/responsive/tool_pages/id_page.dart';
+import 'package:connect/responsive/tool_pages/money_page.dart';
+import 'package:connect/responsive/tool_pages/police_page.dart';
+import 'package:connect/responsive/tool_pages/vote_page.dart';
 import 'package:flutter/material.dart';
 import 'package:connect/constants.dart';
-import 'package:connect/responsive/tool_pages/id_page.dart';
 import 'package:connect/util/my_tile.dart';
 
 class MobileScaffold extends StatefulWidget {
@@ -34,7 +38,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               child: Column(
                 children: [
                   Text(
-                    '\nNotifications\n',
+                    '\nNOTIFICATIONS\n',
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                   ),
                   Expanded(
@@ -74,7 +78,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                                 color: Colors.red,
                               ),
                               child: Hero(
-                                tag: 'uniqueHeroTag',
+                                tag: 'ID',
                                 child: Center(
                                   child: Text(
                                     'ID',
@@ -98,51 +102,32 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: Container(
-                            width: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: Colors.blue,
-                            ),
-                            child: TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom(
-                                padding:
-                                    EdgeInsets.zero, // Remove default padding
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => HealthPage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                color: Colors.blue,
                               ),
-                              child: Text(
-                                'Health',
-                                style: TextStyle(
-                                    fontSize: 30, color: Colors.white),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Card(
-                          color: Colors.transparent,
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Container(
-                            width: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: Colors.green,
-                            ),
-                            child: TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom(
-                                padding:
-                                    EdgeInsets.zero, // Remove default padding
-                              ),
-                              child: Text(
-                                'Money',
-                                style: TextStyle(
-                                    fontSize: 30, color: Colors.white),
+                              child: Hero(
+                                tag: 'Health',
+                                child: Center(
+                                  child: Text(
+                                    'Health',
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
@@ -156,22 +141,32 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: Container(
-                            width: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: Colors.yellow,
-                            ),
-                            child: TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom(
-                                padding:
-                                    EdgeInsets.zero, // Remove default padding
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => MoneyPage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                color: Colors.green,
                               ),
-                              child: Text(
-                                'Vote',
-                                style: TextStyle(
-                                    fontSize: 30, color: Colors.black),
+                              child: Hero(
+                                tag: 'Money',
+                                child: Center(
+                                  child: Text(
+                                    'Money',
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
@@ -185,22 +180,71 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: Container(
-                            width: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: Colors.orange,
-                            ),
-                            child: TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom(
-                                padding:
-                                    EdgeInsets.zero, // Remove default padding
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => VotePage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                color: Colors.yellow,
                               ),
-                              child: Text(
-                                'Police',
-                                style: TextStyle(
-                                    fontSize: 30, color: Colors.white),
+                              child: Hero(
+                                tag: 'Vote',
+                                child: Center(
+                                  child: Text(
+                                    'Vote',
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Card(
+                          color: Colors.transparent,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => PolicePage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                color: Colors.orange,
+                              ),
+                              child: Hero(
+                                tag: 'Police',
+                                child: Center(
+                                  child: Text(
+                                    'Police',
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
                           ),

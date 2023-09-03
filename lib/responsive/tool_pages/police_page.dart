@@ -6,21 +6,21 @@ class PolicePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: myAppBar,
-      body: Center(
+      body: SafeArea(
         child: Hero(
           tag: 'Police',
           child: Container(
-            width: 200,
-            height: 200,
+            height: 100,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
               color: Colors.orange,
             ),
-            child: Text(
-              'Police',
-              style: TextStyle(
-                fontSize: 50,
-                color: Colors.white,
+            child: Center(
+              child: Text(
+                'Police',
+                style: TextStyle(
+                  fontSize: 50,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
