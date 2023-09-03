@@ -28,7 +28,6 @@ class _ProfilePageState extends State<ProfilePage> {
     return Consumer<ModelTheme>(
         builder: (context, ModelTheme themeNotifier, child) {
       return Scaffold(
-        appBar: myAppBar,
         body: SingleChildScrollView(
           child: Column(children: [
             const Center(

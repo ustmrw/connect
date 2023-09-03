@@ -1,3 +1,4 @@
+import 'package:connect/home.dart';
 import 'package:connect/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,14 +21,16 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               theme: themeNotifier.isDark
                   ? ThemeData(
+                      visualDensity: VisualDensity.adaptivePlatformDensity,
                       brightness: Brightness.dark,
                       primaryColor: Colors.teal,
                       primarySwatch: Colors.teal)
                   : ThemeData(
+                      visualDensity: VisualDensity.adaptivePlatformDensity,
                       brightness: Brightness.light,
                       primaryColor: Colors.blue,
                       primarySwatch: Colors.blue),
-              home: const OnboardingPages());
+              home: HomePage());
         },
       ),
     );

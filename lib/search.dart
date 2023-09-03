@@ -2,21 +2,20 @@ import 'package:connect/constants.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const SearchBarApp());
+  runApp(const Search_Bar());
 }
 
-class SearchBarApp extends StatefulWidget {
-  const SearchBarApp({super.key});
+class Search_Bar extends StatefulWidget {
+  const Search_Bar({super.key});
 
   @override
-  State<SearchBarApp> createState() => _SearchBarAppState();
+  State<Search_Bar> createState() => _Search_BarState();
 }
 
-class _SearchBarAppState extends State<SearchBarApp> {
+class _Search_BarState extends State<Search_Bar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: myAppBar,
       body: Stack(children: [
         Positioned(
           left: 0,
@@ -40,8 +39,14 @@ class _SearchBarAppState extends State<SearchBarApp> {
               );
             }, suggestionsBuilder:
                     (BuildContext context, SearchController controller) {
-              return List<ListTile>.generate(5, (int index) {
-                final String item = 'item $index';
+              List<String> suggestions = [
+                'Safety',
+                'Health and Care',
+                'Financial',
+                'Civics',
+                'Legal'
+              ];
+              return suggestions.map((String item) {
                 return ListTile(
                   title: Text(item),
                   onTap: () {

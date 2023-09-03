@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 var defaultBackgroundColor = Colors.grey[300];
 var appBarColor = Colors.grey[900];
 var myAppBar = AppBar(
+  elevation: 0,
   backgroundColor: appBarColor,
   title: const Text('C O N N E C T'),
   centerTitle: true,

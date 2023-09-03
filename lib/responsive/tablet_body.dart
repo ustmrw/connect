@@ -20,8 +20,6 @@ class _TabletScaffoldState extends State<TabletScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-        appBar: myAppBar,
         body: RefreshIndicator(
             key: _refreshIndicatorKey,
             color: Colors.white,
@@ -52,6 +50,7 @@ class _TabletScaffoldState extends State<TabletScaffold> {
                               ),
                               Expanded(
                                 child: ListView.builder(
+                                  physics: BouncingScrollPhysics(),
                                   itemCount: 6,
                                   itemBuilder: (context, index) {
                                     return const MyTile();
@@ -62,8 +61,8 @@ class _TabletScaffoldState extends State<TabletScaffold> {
                                 margin: const EdgeInsets.all(10),
                                 height: 150,
                                 child: ListView(
+                                  physics: BouncingScrollPhysics(),
                                   padding: EdgeInsets.all(8),
-                                  // This next line does the trick.
                                   scrollDirection: Axis.horizontal,
                                   children: <Widget>[
                                     Card(

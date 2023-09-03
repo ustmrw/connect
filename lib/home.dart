@@ -1,3 +1,4 @@
+import 'package:connect/constants.dart';
 import 'package:connect/responsive/desktop_body.dart';
 import 'package:connect/responsive/mobile_body.dart';
 import 'package:connect/responsive/responsive_layout.dart';
@@ -20,7 +21,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentPageIndex = 1;
   final List<Widget> pages = [
-    const SearchBarApp(),
+    const Search_Bar(),
     const ResponsiveLayout(
       mobileBody: MobileScaffold(),
       tabletBody: TabletScaffold(),
@@ -35,34 +36,38 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Consumer<ModelTheme>(
       builder: (context, ModelTheme themeNotifier, child) {
-        return Scaffold(
-          body: pages[currentPageIndex],
-          bottomNavigationBar: NavigationBar(
-            labelBehavior: labelBehavior,
-            selectedIndex: currentPageIndex,
-            onDestinationSelected: (int index) {
-              setState(
-                () {
-                  currentPageIndex = index;
-                },
-              );
-            },
-            destinations: const <Widget>[
-              NavigationDestination(
-                icon: Icon(Icons.search_outlined),
-                label: 'Search',
-              ),
-              NavigationDestination(
-                selectedIcon: Icon(Icons.home),
-                icon: Icon(Icons.home_outlined),
-                label: 'HOME',
-              ),
-              NavigationDestination(
-                selectedIcon: Icon(Icons.person),
-                icon: Icon(Icons.person_outlined),
-                label: 'Profile',
-              ),
-            ],
+        return SafeArea(
+          child: Scaffold(
+            backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+            appBar: myAppBar,
+            body: pages[currentPageIndex],
+            bottomNavigationBar: NavigationBar(
+              labelBehavior: labelBehavior,
+              selectedIndex: currentPageIndex,
+              onDestinationSelected: (int index) {
+                setState(
+                  () {
+                    currentPageIndex = index;
+                  },
+                );
+              },
+              destinations: const <Widget>[
+                NavigationDestination(
+                  icon: Icon(Icons.search_outlined),
+                  label: 'Search',
+                ),
+                NavigationDestination(
+                  selectedIcon: Icon(Icons.home),
+                  icon: Icon(Icons.home_outlined),
+                  label: 'HOME',
+                ),
+                NavigationDestination(
+                  selectedIcon: Icon(Icons.person),
+                  icon: Icon(Icons.person_outlined),
+                  label: 'Profile',
+                ),
+              ],
+            ),
           ),
         );
       },

@@ -20,8 +20,6 @@ class _MobileScaffoldState extends State<MobileScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-        appBar: myAppBar,
         drawer: myDrawer,
         body: RefreshIndicator(
           key: _refreshIndicatorKey,
@@ -43,6 +41,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                   ),
                   Expanded(
                     child: ListView.builder(
+                      physics: BouncingScrollPhysics(),
                       itemCount: 5,
                       itemBuilder: (context, index) {
                         return const MyTile();
@@ -53,8 +52,8 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                     margin: const EdgeInsets.all(10),
                     height: 150,
                     child: ListView(
+                      physics: BouncingScrollPhysics(),
                       padding: EdgeInsets.all(8),
-                      // This next line does the trick.
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
                         Card(
@@ -93,9 +92,6 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 8,
-                        ),
                         Card(
                           color: Colors.transparent,
                           elevation: 0,
@@ -131,9 +127,6 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                               ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          width: 8,
                         ),
                         Card(
                           color: Colors.transparent,
@@ -171,9 +164,6 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 8,
-                        ),
                         Card(
                           color: Colors.transparent,
                           elevation: 0,
@@ -209,9 +199,6 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                               ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          width: 8,
                         ),
                         Card(
                           color: Colors.transparent,
