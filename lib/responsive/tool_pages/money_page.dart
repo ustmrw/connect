@@ -18,8 +18,10 @@ class MoneyPage extends StatelessWidget {
               child: Text(
                 'Money',
                 style: TextStyle(
+                  decoration: TextDecoration.none,
                   fontSize: 50,
                   color: Colors.white,
+                  fontWeight: FontWeight.normal,
                 ),
               ),
             ),

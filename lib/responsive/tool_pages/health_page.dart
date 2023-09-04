@@ -18,8 +18,10 @@ class HealthPage extends StatelessWidget {
               child: Text(
                 'Health',
                 style: TextStyle(
+                  decoration: TextDecoration.none,
                   fontSize: 50,
                   color: Colors.white,
+                  fontWeight: FontWeight.normal,
                 ),
               ),
             ),

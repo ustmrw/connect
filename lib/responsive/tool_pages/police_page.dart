@@ -18,6 +18,7 @@ class PolicePage extends StatelessWidget {
               child: Text(
                 'Police',
                 style: TextStyle(
+                  decoration: TextDecoration.none,
                   fontSize: 50,
                   color: Colors.white,
                 ),

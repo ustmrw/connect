@@ -18,8 +18,10 @@ class IDPage extends StatelessWidget {
               child: Text(
                 'ID',
                 style: TextStyle(
+                  decoration: TextDecoration.none,
                   fontSize: 50,
                   color: Colors.white,
+                  fontWeight: FontWeight.normal,
                 ),
               ),
             ),

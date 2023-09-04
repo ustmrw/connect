@@ -18,8 +18,10 @@ class VotePage extends StatelessWidget {
               child: Text(
                 'Vote',
                 style: TextStyle(
+                  decoration: TextDecoration.none,
                   fontSize: 50,
                   color: Colors.black,
+                  fontWeight: FontWeight.normal,
                 ),
               ),
             ),

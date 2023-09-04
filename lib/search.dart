@@ -1,4 +1,3 @@
-import 'package:connect/constants.dart';
 import 'package:flutter/material.dart';
 
 void main() {

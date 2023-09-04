@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:connect/constants.dart';
 import 'package:connect/util/display_image_widget.dart';
 import 'package:connect/util/edit_email.dart';
 import 'package:connect/util/edit_image.dart';
