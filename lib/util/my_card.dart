@@ -11,7 +11,6 @@ class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(10),
       height: 150,
       child: ListView(
         physics: BouncingScrollPhysics(),
@@ -110,7 +109,7 @@ class MyCard extends StatelessWidget {
                 width: 150,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color: Colors.green,
+                  color: Colors.red,
                 ),
                 child: Hero(
                   tag: 'Money',
@@ -147,7 +146,7 @@ class MyCard extends StatelessWidget {
                 width: 150,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color: Colors.yellow,
+                  color: Colors.blue,
                 ),
                 child: Hero(
                   tag: 'Vote',
@@ -158,7 +157,7 @@ class MyCard extends StatelessWidget {
                         decoration: TextDecoration.none,
                         fontSize: 30,
                         fontWeight: FontWeight.w300,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                     ),
                   ),
@@ -184,7 +183,7 @@ class MyCard extends StatelessWidget {
                 width: 150,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color: Colors.orange,
+                  color: Colors.red,
                 ),
                 child: Hero(
                   tag: 'Police',

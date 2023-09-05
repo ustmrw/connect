@@ -11,7 +11,7 @@ var myAppBar = AppBar(
 
 var tilePadding = const EdgeInsets.all(8);
 var myDrawer = Drawer(
-  width: 250,
+  width: 275,
   elevation: 0,
   child: Container(
     decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),

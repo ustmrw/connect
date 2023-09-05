@@ -1,5 +1,5 @@
+import 'package:connect/util/my_notifications.dart';
 import 'package:flutter/material.dart';
-import '../constants.dart';
 import '../util/my_card.dart';
 
 class DesktopScaffold extends StatefulWidget {
@@ -14,82 +14,28 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
       GlobalKey<_DesktopScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: RefreshIndicator(
-      key: _refreshIndicatorKey,
-      color: Colors.white,
-      backgroundColor: Colors.black,
-      strokeWidth: 2.0,
-      onRefresh: () async {
-        // Replace delay with Future
-        return Future<void>.delayed(const Duration(seconds: 2));
-      },
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // open drawer
-              myDrawer,
-
-              // first half of page
-              Expanded(
-                flex: 2,
-                child: Column(
-                  children: [
-                    Text(
-                      '\nNOTIFICATIONS\n',
-                      style:
-                          TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                    ),
-                    // Expanded(
-                    //   child: ListView.builder(
-                    //     physics: BouncingScrollPhysics(),
-                    //     itemCount: 7,
-                    //     itemBuilder: (context, index) {
-                    //       return const MyTile();
-                    //     },
-                    //   ),
-                    // ),
-                    MyCard(),
-                  ],
-                ),
-              ),
-              // second half of page
-              Expanded(
-                child: PageView(
-                  scrollDirection: Axis.vertical,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 400,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: Colors.grey[400],
-                        ),
-                      ),
-                    ),
-                    // list of stuff
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: Colors.grey[200],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+    final size = MediaQuery.of(context).size;
+    final double categoryHeight = size.height * 0.4;
+    return SafeArea(child: Scaffold(
+      body: OrientationBuilder(builder: (context, orientation) {
+        return RefreshIndicator(
+          key: _refreshIndicatorKey,
+          color: Colors.white,
+          backgroundColor: Colors.black,
+          strokeWidth: 2.0,
+          child: ListView(children: [
+            MyNotifications(),
+            SizedBox(height: categoryHeight),
+            MyCard(),
+          ]),
+          onRefresh: () async {
+            // Replace delay with Future
+            return Future<void>.delayed(
+              const Duration(milliseconds: 200),
+            );
+          },
+        );
+      }),
     ));
   }
 }

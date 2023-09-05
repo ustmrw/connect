@@ -1,10 +1,17 @@
-import 'package:connect/home.dart';
-// import 'package:connect/onboarding.dart';
+import 'package:connect/onboarding.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:connect/util/model_theme.dart';
+// import 'package:firebase_core/firebase_core.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+  // await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -30,7 +37,7 @@ class MyApp extends StatelessWidget {
                       brightness: Brightness.light,
                       primaryColor: Colors.blue,
                       primarySwatch: Colors.blue),
-              home: HomePage());
+              home: OnboardingPages());
         },
       ),
     );

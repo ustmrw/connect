@@ -15,25 +15,31 @@ class _MobileScaffoldState extends State<MobileScaffold> {
       GlobalKey<_MobileScaffoldState>();
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final double categoryHeight = size.height * 0.4;
     return SafeArea(
       child: Scaffold(
-          drawer: myDrawer,
-          body: RefreshIndicator(
+        drawer: myDrawer,
+        body: OrientationBuilder(builder: (context, orientation) {
+          return RefreshIndicator(
             key: _refreshIndicatorKey,
             color: Colors.white,
             backgroundColor: Colors.black,
             strokeWidth: 2.0,
+            child: ListView(children: [
+              MyNotifications(),
+              SizedBox(height: categoryHeight),
+              MyCard(),
+            ]),
             onRefresh: () async {
               // Replace delay with Future
-              return Future<void>.delayed(const Duration(seconds: 2));
+              return Future<void>.delayed(
+                const Duration(milliseconds: 200),
+              );
             },
-            child: Column(
-              children: [
-                MyNotifications(),
-                MyCard(),
-              ],
-            ),
-          )),
+          );
+        }),
+      ),
     );
   }
 }
