@@ -103,7 +103,8 @@ class _LoginPageState extends State<LoginPage> {
 
               // logo
               const Icon(
-                Icons.lock,
+                Icons.star,
+                color: Colors.black,
                 size: 100,
               ),
 
@@ -111,11 +112,11 @@ class _LoginPageState extends State<LoginPage> {
 
               // welcome back, you've been missed!
               Text(
-                'Welcome back you\'ve been missed!',
+                'Welcome!',
                 style: TextStyle(
-                  color: Colors.grey[700],
-                  fontSize: 16,
-                ),
+                    color: Colors.grey[700],
+                    fontSize: 24,
+                    fontWeight: FontWeight.w300),
               ),
 
               const SizedBox(height: 25),
@@ -127,30 +128,30 @@ class _LoginPageState extends State<LoginPage> {
                 obscureText: false,
               ),
 
-              const SizedBox(height: 10),
+              // const SizedBox(height: 10),
 
-              // password textfield
-              MyTextField(
-                controller: passwordController,
-                hintText: 'Password',
-                obscureText: true,
-              ),
+              // // password textfield
+              // MyTextField(
+              //   controller: passwordController,
+              //   hintText: 'Password',
+              //   obscureText: true,
+              // ),
 
               const SizedBox(height: 10),
 
               // forgot password?
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'Forgot Password?',
-                      style: TextStyle(color: Colors.grey[600]),
-                    ),
-                  ],
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.end,
+              //     children: [
+              //       Text(
+              //         'Forgot Password?',
+              //         style: TextStyle(color: Colors.grey[600]),
+              //       ),
+              //     ],
+              //   ),
+              // ),
 
               const SizedBox(height: 25),
 
@@ -207,30 +208,30 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(width: 25),
 
                   // apple button
-                  SquareTile(imagePath: 'lib/img/apple.png')
+                  SquareTile(imagePath: 'lib/img/A.png')
                 ],
               ),
 
               const SizedBox(height: 50),
 
               // not a member? register now
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Not a member?',
-                    style: TextStyle(color: Colors.grey[700]),
-                  ),
-                  const SizedBox(width: 4),
-                  const Text(
-                    'Register now',
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              )
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     Text(
+              //       'Not a member?',
+              //       style: TextStyle(color: Colors.grey[700]),
+              //     ),
+              //     const SizedBox(width: 4),
+              //     const Text(
+              //       'Register now',
+              //       style: TextStyle(
+              //         color: Colors.blue,
+              //         fontWeight: FontWeight.bold,
+              //       ),
+              //     ),
+              //   ],
+              // )
             ],
           ),
         ),
