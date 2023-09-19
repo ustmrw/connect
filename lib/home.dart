@@ -1,9 +1,9 @@
-import 'package:connect/constants.dart';
+import 'package:connect/util/constants.dart';
 import 'package:connect/responsive/desktop_body.dart';
 import 'package:connect/responsive/mobile_body.dart';
 import 'package:connect/responsive/responsive_layout.dart';
 import 'package:connect/responsive/tablet_body.dart';
-import 'package:connect/user_profile.dart';
+import 'package:connect/util/user_profile.dart';
 import 'package:connect/search.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

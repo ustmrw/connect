@@ -1,4 +1,4 @@
-import 'package:connect/constants.dart';
+import 'package:connect/util/constants.dart';
 import 'package:flutter/material.dart';
 
 class VotePage extends StatelessWidget {
@@ -12,7 +12,7 @@ class VotePage extends StatelessWidget {
           child: Container(
             height: 100,
             decoration: BoxDecoration(
-              color: Colors.yellow,
+              color: Colors.blue,
             ),
             child: Center(
               child: Text(
@@ -20,7 +20,7 @@ class VotePage extends StatelessWidget {
                 style: TextStyle(
                   decoration: TextDecoration.none,
                   fontSize: 50,
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.normal,
                 ),
               ),

@@ -1,4 +1,4 @@
-import 'package:connect/constants.dart';
+import 'package:connect/util/constants.dart';
 import 'package:flutter/material.dart';
 
 class MoneyPage extends StatelessWidget {
@@ -12,7 +12,7 @@ class MoneyPage extends StatelessWidget {
           child: Container(
             height: 100,
             decoration: BoxDecoration(
-              color: Colors.green,
+              color: Colors.red,
             ),
             child: Center(
               child: Text(

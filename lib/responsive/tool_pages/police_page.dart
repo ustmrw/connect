@@ -1,4 +1,4 @@
-import 'package:connect/constants.dart';
+import 'package:connect/util/constants.dart';
 import 'package:flutter/material.dart';
 
 class PolicePage extends StatelessWidget {
@@ -12,7 +12,7 @@ class PolicePage extends StatelessWidget {
           child: Container(
             height: 100,
             decoration: BoxDecoration(
-              color: Colors.orange,
+              color: Colors.red,
             ),
             child: Center(
               child: Text(
@@ -21,6 +21,7 @@ class PolicePage extends StatelessWidget {
                   decoration: TextDecoration.none,
                   fontSize: 50,
                   color: Colors.white,
+                  fontWeight: FontWeight.normal,
                 ),
               ),
             ),

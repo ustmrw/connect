@@ -1,4 +1,4 @@
-import 'package:connect/constants.dart';
+import 'package:connect/util/constants.dart';
 import 'package:flutter/material.dart';
 
 class IDPage extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:connect/util/my_card.dart';
 import 'package:connect/util/my_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:connect/constants.dart';
+import 'package:connect/util/constants.dart';
 
 class MobileScaffold extends StatefulWidget {
   const MobileScaffold({Key? key}) : super(key: key);

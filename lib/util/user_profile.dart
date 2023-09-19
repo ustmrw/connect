@@ -8,8 +8,8 @@ import 'package:connect/util/edit_id.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:connect/util/model_theme.dart';
-import 'usr/user.dart';
-import 'usr/user_data.dart';
+import '../usr/user.dart';
+import '../usr/user_data.dart';
 
 // This class handles the Page to dispaly the user's info on the "Edit Profile" Screen
 class ProfilePage extends StatefulWidget {
